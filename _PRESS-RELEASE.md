@@ -1,7 +1,7 @@
 # Project Name #
 
 <!--
-> This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
+> This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterity's sake.
 
 There is an approach called "working backwards" that is widely used at Amazon. They work backwards from the customer, rather than starting with an idea for a product and trying to bolt customers onto it. While working backwards can be applied to any specific product decision, using this approach is especially important when developing new products or features.
 
@@ -19,19 +19,34 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+Tab Refresh
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+For anyone who uses a web browser, turn the expanse of a newly opened browser tab into a window of refreshing calm and convenience.
+
+For anyone who uses a web browser, instead of just opening a new tab, open a window into refreshing calm and convenience.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+One of the most common actions that many users perform with a web browser is opening new tabs. With Tab Refresh, users have the opportunity to experience a refreshing sight and to easilly access useful features, like a clock and a calendar, every time they open a new tab. Tab Refresh makes the user's day better by adding delight and convenience to an existing workflow, without adding the overhead of an additional app that the user needs to manage. And when users need to focus on a single app or screen, instead of minimizing windows, simply opening a new tab will provide the serenity to focus.
+
 ## Problem ##
   > Describe the problem your product solves.
+
+Tab Refresh solves two problems:
+
+1. New browser tabs occupy a lot of screen space without providing much value.
+2. Our modern computing experience provides a vast amount of utility with little opportunity for tranquility and restoration.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
-## Quote from You ##
+Tab Refresh solves both problems by turning the vast expanse of a new browser tab into both a calming sight and an unobtrusive but convenient place to access handy features.
+
+<!-- ## Quote from You ##
   > A quote from a spokesperson in your company.
 
 ## How to Get Started ##
@@ -41,4 +56,4 @@ Once the project moves into development, the press release can be used as a touc
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Wrap it up and give pointers where the reader should go next. -->
