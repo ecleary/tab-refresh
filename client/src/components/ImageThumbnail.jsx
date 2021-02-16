@@ -1,16 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import { ThumbnailContainer } from './styles/ImageThumbnail.jsx';
 
-const ThumbnailContainer = styled.div`
-  display: inline-block;
-`
-
-const ImageThumbnail = ({ imageData }) => {
-  const { thumb } = imageData.urls;
+const ImageThumbnail = ({ imageData, onSetBackgroundImage }) => {
+  const { thumb, full } = imageData.urls;
 
   return (
-    <ThumbnailContainer>
-      {/* <h4>ImageThumbnail</h4> */}
+    <ThumbnailContainer onClick={(event) => onSetBackgroundImage(event, full)}>
       <img src={thumb} />
     </ThumbnailContainer>
   );

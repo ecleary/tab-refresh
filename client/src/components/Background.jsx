@@ -1,10 +1,10 @@
 import React from 'react';
+import { BackgroundImage } from './styles/Background.jsx';
 
-const Background = (props) => {
+const Background = ({ backgroundImageUrl }) => {
   return (
-    <div>
-      <h2>Background</h2>
-    </div>
+    <BackgroundImage backgroundImageUrl={backgroundImageUrl}>
+    </BackgroundImage>
   );
 };
 

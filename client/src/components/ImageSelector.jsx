@@ -1,7 +1,8 @@
 import React from 'react';
 import ImageRow from './ImageRow.jsx';
+import { ImageSelectorContainer } from './styles/ImageSelector.jsx';
 
-const ImageSelector = ({ imageData }) => {
+const ImageSelector = ({ imageData, onSetBackgroundImage }) => {
   const dataInThrees = [];
   let currentDataInThree = [];
   imageData.forEach((imageDetails, index) => {
@@ -15,14 +16,13 @@ const ImageSelector = ({ imageData }) => {
   });
   const imageRows = [];
   dataInThrees.forEach((dataInThree) => {
-    imageRows.push(<ImageRow key={JSON.stringify(dataInThree)} imageData={dataInThree} />);
+    imageRows.push(<ImageRow key={JSON.stringify(dataInThree)} imageData={dataInThree} onSetBackgroundImage={onSetBackgroundImage}/>);
   });
 
   return (
-    <div>
-      <h2>ImageSelector</h2>
+    <ImageSelectorContainer>
       {imageRows}
-    </div>
+    </ImageSelectorContainer>
   );
 };
 

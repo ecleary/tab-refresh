@@ -12,11 +12,12 @@ module.exports.getImages = (callback) => {
   unsplash.photos.getRandom({
     query: 'landscape',
     orientation: 'landscape',
-    count: 10,
+    count: 15,
   }).then(result => {
     if (result.errors) {
       callback(result.errors[0]);
     } else {
+      // console.log(result);
       callback(null, result.response);
     }
   });

@@ -20,4 +20,16 @@ const userSchema = new Schema({
   thermoDisplay: { type: String, default: 'light' },
 });
 
-module.exports.User = mongoose.model('User', userSchema);
+const User = module.exports.User = mongoose.model('User', userSchema);
+
+module.exports.getBackgroundImageData = (userId, callback) => {
+  User.findOne({ _id: userId })
+    .then((res) => callback(null, res.backgroundImage))
+    .catch(callback);
+};
+
+module.exports.setBackgroundImage = (userId, url, callback) => {
+  User.updateOne({ _id: userId }, { backgroundImage: url })
+    .then((res) => callback(null, res))
+    .catch(callback);
+};
