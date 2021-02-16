@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import Background from './Background.jsx';
 import ImageSelector from './ImageSelector.jsx';
+import { RemainingUnsplashApiCalls } from './styles/App.jsx';
 
 export default class App extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class App extends Component {
       imageData: [],
       backgroundImageUrl: '',
       userId: '602c1f093a2e1c3c66e45f98',
+      remainingUnsplashApiCalls: '',
     };
     this.getImageData = this.getImageData.bind(this);
     this.getUserBackgroundImage = this.getUserBackgroundImage.bind(this);
@@ -26,9 +28,11 @@ export default class App extends Component {
     $.ajax({
       url: '/api/images',
       method: 'GET',
-      success: (data) => {
+      success: (response) => {
+        const { data, xRatelimitRemaining } = response;
         this.setState({
           imageData: data,
+          remainingUnsplashApiCalls: xRatelimitRemaining,
         });
       },
       error: console.error,
@@ -71,9 +75,19 @@ export default class App extends Component {
   }
 
   render() {
-    const { imageData, backgroundImageUrl } = this.state;
+    const {
+      imageData,
+      backgroundImageUrl,
+      remainingUnsplashApiCalls,
+    } = this.state;
+    const remainingApiCallCountdown = `API calls left: ${remainingUnsplashApiCalls}`;
+
+
     return (
       <div>
+        <RemainingUnsplashApiCalls>
+          {remainingApiCallCountdown}
+        </RemainingUnsplashApiCalls>
         <Background backgroundImageUrl={backgroundImageUrl} />
         <ImageSelector imageData={imageData} onSetBackgroundImage={this.handleSetBackgroundImage} />
       </div>
