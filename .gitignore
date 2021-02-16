@@ -36,3 +36,6 @@ bower_components/
 
 # Webpack output
 client/public/app.js
+
+# Config files
+server/controllers/unsplashConfig.js
