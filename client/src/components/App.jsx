@@ -99,6 +99,12 @@ export default class App extends Component {
         <Background backgroundImageUrl={backgroundImageUrl} />
         <div
           className={displayImageSelector
+            ? styles.imageSelectorModalBackground
+            : styles.imageSelectorModalBackgroundHidden}
+          onClick={this.toggleImageSelectorDisplay}
+        ></div>
+        <div
+          className={displayImageSelector
             ? styles.imageSelectorContainer
             : styles.imageSelectorContainerHidden}
         >
