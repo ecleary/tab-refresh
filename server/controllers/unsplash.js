@@ -7,18 +7,22 @@ const axios = require('axios');
 
 const QUERY = 'landscape';
 const ORIENTATION = 'landscape';
-const COUNT = '15';
+const COUNT = '30';
+// const url = `https://api.unsplash.com/photos/random?query=${QUERY}&orientation=${ORIENTATION}&count=${COUNT}`;
+const url = `https://api.unsplash.com/search/photos?query=${QUERY}&orientation=${ORIENTATION}&per_page=${COUNT}`;
+// const url = `https://api.unsplash.com/search/photos?query=${QUERY}&orientation=${ORIENTATION}`;
 
 module.exports.getImages = (callback) => {
   axios({
-    url: `https://api.unsplash.com/photos/random?query=${QUERY}&orientation=${ORIENTATION}&count=${COUNT}`,
+    url: url,
     method: 'get',
     headers: {
       Authorization: `Client-ID ${config.ACCESS_KEY}`,
     },
   }).then((res) => {
     const data = {
-      data: res.data,
+      // data: res.data,
+      data: res.data.results,
       xRatelimitRemaining: res.headers['x-ratelimit-remaining'],
     };
     callback(null, data);

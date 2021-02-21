@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageRow from './ImageRow.jsx';
-import { ImageSelectorContainer } from './styles/ImageSelector.jsx';
+import styles from './styles/ImageSelector.css';
 
 const ImageSelector = ({ imageData, onSetBackgroundImage }) => {
   const dataInThrees = [];
@@ -20,9 +20,9 @@ const ImageSelector = ({ imageData, onSetBackgroundImage }) => {
   });
 
   return (
-    <ImageSelectorContainer>
+    <div className={styles.imageSelectorContainer}>
       {imageRows}
-    </ImageSelectorContainer>
+    </div>
   );
 };
 

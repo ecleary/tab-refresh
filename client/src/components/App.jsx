@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import Background from './Background.jsx';
 import ImageSelector from './ImageSelector.jsx';
-import { RemainingUnsplashApiCalls } from './styles/App.jsx';
+import styles from './styles/App.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -12,11 +12,13 @@ export default class App extends Component {
       backgroundImageUrl: '',
       userId: '602c1f093a2e1c3c66e45f98',
       remainingUnsplashApiCalls: '',
+      displayImageSelector: false,
     };
     this.getImageData = this.getImageData.bind(this);
     this.getUserBackgroundImage = this.getUserBackgroundImage.bind(this);
     this.setUserBackgroundImage = this.setUserBackgroundImage.bind(this);
     this.handleSetBackgroundImage = this.handleSetBackgroundImage.bind(this);
+    this.toggleImageSelectorDisplay = this.toggleImageSelectorDisplay.bind(this);
   }
 
   componentDidMount() {
@@ -67,11 +69,16 @@ export default class App extends Component {
 
   handleSetBackgroundImage(event, url) {
     event.preventDefault();
-    // console.log('url:');
-    // console.log(url);
     this.setState({
       backgroundImageUrl: url,
     }, this.setUserBackgroundImage);
+  }
+
+  toggleImageSelectorDisplay() {
+    const { displayImageSelector } = this.state;
+    this.setState({
+      displayImageSelector: !displayImageSelector,
+    });
   }
 
   render() {
@@ -79,17 +86,30 @@ export default class App extends Component {
       imageData,
       backgroundImageUrl,
       remainingUnsplashApiCalls,
+      displayImageSelector,
     } = this.state;
     const remainingApiCallCountdown = `API calls left: ${remainingUnsplashApiCalls}`;
 
 
     return (
       <div>
-        <RemainingUnsplashApiCalls>
+        <h1 className={styles.remainingUnsplashApiCalls}>
           {remainingApiCallCountdown}
-        </RemainingUnsplashApiCalls>
+        </h1>
         <Background backgroundImageUrl={backgroundImageUrl} />
-        <ImageSelector imageData={imageData} onSetBackgroundImage={this.handleSetBackgroundImage} />
+        <div
+          className={displayImageSelector
+            ? styles.imageSelectorContainer
+            : styles.imageSelectorContainerHidden}
+        >
+          <ImageSelector imageData={imageData} onSetBackgroundImage={this.handleSetBackgroundImage} />
+        </div>
+        <button
+          className={styles.imageSelectorDisplayButton}
+          onClick={this.toggleImageSelectorDisplay}
+        >
+          Select image
+        </button>
       </div>
     );
   }

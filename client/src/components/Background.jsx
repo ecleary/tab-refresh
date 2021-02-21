@@ -1,10 +1,12 @@
 import React from 'react';
-import { BackgroundImage } from './styles/Background.jsx';
+import styles from './styles/Background.css';
 
 const Background = ({ backgroundImageUrl }) => {
+  const root = document.querySelector(':root');
+  root.style.setProperty('--background-image-url', `url(${backgroundImageUrl})`);
+
   return (
-    <BackgroundImage backgroundImageUrl={backgroundImageUrl}>
-    </BackgroundImage>
+    <div className={styles.backgroundImage}></div>
   );
 };
 

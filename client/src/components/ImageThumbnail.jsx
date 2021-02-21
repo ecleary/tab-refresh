@@ -1,13 +1,13 @@
 import React from 'react';
-import { ThumbnailContainer } from './styles/ImageThumbnail.jsx';
+import styles from './styles/ImageThumbnail.css';
 
 const ImageThumbnail = ({ imageData, onSetBackgroundImage }) => {
   const { thumb, full } = imageData.urls;
 
   return (
-    <ThumbnailContainer onClick={(event) => onSetBackgroundImage(event, full)}>
+    <div className={styles.thumbnailContainer} onClick={(event) => onSetBackgroundImage(event, full)}>
       <img src={thumb} />
-    </ThumbnailContainer>
+    </div>
   );
 };
 
