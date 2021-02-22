@@ -38,3 +38,10 @@
   right: 50px;
   z-index: 5;
 }
+
+.svgTest {
+  position: relative;
+  z-index: 3;
+  width: 51;
+  height: 46;
+}
