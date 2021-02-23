@@ -47,8 +47,6 @@ export default class App extends Component {
       url: `/api/users/${userId}/backgroundImage`,
       method: 'GET',
       success: (data) => {
-        // console.log('data:');
-        // console.log(data);
         this.setState({
           backgroundImageUrl: data,
         });
