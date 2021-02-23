@@ -8,13 +8,6 @@ export default class Background extends Component {
       imageHasLoaded: false,
       previousImageUrl: '',
     };
-    this.setPreviousImageUrl = this.setPreviousImageUrl.bind(this);
-  }
-
-  setPreviousImageUrl(url) {
-    this.setState({
-      previousImageUrl: url,
-    });
   }
 
   componentDidMount() {
