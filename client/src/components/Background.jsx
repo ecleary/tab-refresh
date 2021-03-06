@@ -6,9 +6,19 @@ export default class Background extends Component {
     super(props);
     this.state = {
       imgUrlList: [],
+      waitingUrl: '',
     };
+    this.loadImage = this.loadImage.bind(this);
     this.addImgUrlToList = this.addImgUrlToList.bind(this);
     this.shortenImgUrlList = this.shortenImgUrlList.bind(this);
+  }
+
+  loadImage(backgroundImageUrl) {
+    const img = new Image();
+    img.onload = () => {
+      this.addImgUrlToList(backgroundImageUrl);
+    };
+    img.src = backgroundImageUrl;
   }
 
   addImgUrlToList(imgUrl) {
@@ -29,6 +39,14 @@ export default class Background extends Component {
     imgUrlList.pop();
     this.setState({
       imgUrlList,
+    }, () => {
+      const { waitingUrl } = this.state;
+      if (waitingUrl.length > 0) {
+        this.loadImage(waitingUrl);
+        this.setState({
+          waitingUrl: '',
+        });
+      }
     });
   }
 
@@ -42,13 +60,13 @@ export default class Background extends Component {
   componentDidUpdate(prevProps) {
     const { imgUrlList } = this.state;
     if (this.props.backgroundImageUrl !== prevProps.backgroundImageUrl) {
+      const { backgroundImageUrl } = this.props;
       if (imgUrlList.length < 2) {
-        const { backgroundImageUrl } = this.props;
-        const img = new Image();
-        img.onload = () => {
-          this.addImgUrlToList(backgroundImageUrl);
-        };
-        img.src = backgroundImageUrl;
+        this.loadImage(backgroundImageUrl);
+      } else {
+        this.setState({
+          waitingUrl: backgroundImageUrl,
+        });
       }
     }
   }
