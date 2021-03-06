@@ -90,7 +90,6 @@ export default class App extends Component {
     } = this.state;
     const remainingApiCallCountdown = `API calls left: ${remainingUnsplashApiCalls}`;
 
-
     return (
       <div>
         <h1 className={styles.remainingUnsplashApiCalls}>
