@@ -73,9 +73,12 @@ export default class Background extends Component {
     const backgroundImages = [];
     const root = document.querySelector(':root');
     imgUrlList.forEach((imgUrl, index) => {
-      imgUrl === 'about:blank'
-        ? root.style.setProperty(`--background-image-url-${index}`, imgUrl)
-        : root.style.setProperty(`--background-image-url-${index}`, `url(${imgUrl})`);
+      root.style.setProperty(
+        `--background-image-url-${index}`,
+        imgUrl === 'about:blank'
+          ? imgUrl
+          : `url(${imgUrl})`,
+      );
       root.style.setProperty(`--background-image-z-index-${index}`, `calc(1 + ${index})`);
       root.style.setProperty(`--background-image-opacity-${index}`, index > 0 ? 0 : 1);
       backgroundImages.push(<div key={imgUrl} className={styles[`backgroundImage${index}`]} />);
