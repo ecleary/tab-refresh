@@ -1,0 +1,47 @@
+.remainingUnsplashApiCalls {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  z-index: 5;
+}
+
+.imageSelectorContainer {
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+  height: 500px;
+  overflow: scroll;
+  z-index: 5;
+}
+
+.imageSelectorModalBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  outline: 0;
+  background: transparent;
+  z-index: 4;
+}
+
+.imageSelectorModalBackgroundHidden,
+.imageSelectorContainerHidden,
+.imageSelectorContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.imageSelectorDisplayButton {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  z-index: 5;
+}
+
+.svgTest {
+  position: relative;
+  z-index: 3;
+  width: 51;
+  height: 46;
+}

@@ -33,3 +33,9 @@ bower_components/
 .floobit
 .floo
 .flooignore
+
+# Webpack output
+client/public/app.js
+
+# Config files
+server/controllers/unsplashConfig.js
