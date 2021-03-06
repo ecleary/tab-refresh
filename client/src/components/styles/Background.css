@@ -1,4 +1,4 @@
-.backgroundImage {
+/* .backgroundImage {
   background-image: var(--background-image-url);
   background-size: cover;
   background-position: center;
@@ -8,4 +8,46 @@
   height: 100%;
   width: 100%;
   z-index: 1;
+} */
+
+.backgroundImage0,
+.backgroundImage1 {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
+
+.backgroundImage0 {
+  background-image: var(--background-image-url-0);
+  z-index: var(--background-image-z-index-0);
+  opacity: var(--background-image-opacity-0);
+  /* z-index: 1; */
+  /* opacity: 1; */
+}
+
+.backgroundImage1 {
+  background-image: var(--background-image-url-1);
+  z-index: var(--background-image-z-index-1);
+  opacity: var(--background-image-opacity-1);
+  /* z-index: 2;
+  opacity: 0; */
+  transition: opacity 2s;
+}
+
+/* .backgroundImageFaded {
+  background-image: var(--background-image-url-in-front);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 2s;
+  z-index: 2;
+} */
