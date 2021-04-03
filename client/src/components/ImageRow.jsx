@@ -1,7 +1,7 @@
 import React from 'react';
-import ImageThumbnail from './ImageThumbnail.jsx';
+import { ImageThumbnail } from './ImageThumbnail.jsx';
 
-const ImageRow = ({ imageData, onSetBackgroundImage }) => {
+export const ImageRow = ({ imageData, onSetBackgroundImage }) => {
   const imageThumbnails = [];
   imageData.forEach((imageDetails) => {
     imageThumbnails.push(<ImageThumbnail key={JSON.stringify(imageDetails)} imageData={imageDetails} onSetBackgroundImage={onSetBackgroundImage} />);
@@ -13,5 +13,3 @@ const ImageRow = ({ imageData, onSetBackgroundImage }) => {
     </div>
   );
 };
-
-export default ImageRow;

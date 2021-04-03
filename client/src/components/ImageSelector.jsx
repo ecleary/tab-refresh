@@ -1,8 +1,8 @@
 import React from 'react';
-import ImageRow from './ImageRow.jsx';
+import { ImageRow } from './ImageRow.jsx';
 import styles from './styles/ImageSelector.css';
 
-const ImageSelector = ({ imageData, onSetBackgroundImage }) => {
+export const ImageSelector = ({ imageData, onSetBackgroundImage }) => {
   const dataInThrees = [];
   let currentDataInThree = [];
   imageData.forEach((imageDetails, index) => {
@@ -25,5 +25,3 @@ const ImageSelector = ({ imageData, onSetBackgroundImage }) => {
     </div>
   );
 };
-
-export default ImageSelector;
