@@ -115,6 +115,12 @@ export default class App extends Component {
         >
           Select image
         </button>
+        <div className={styles.imageSelectorDisplayButtonV2}>
+          <div className={styles.imageSelectorDisplayButtonUpperLeft} />
+          <div className={styles.imageSelectorDisplayButtonUpperRight} />
+          <div className={styles.imageSelectorDisplayButtonLowerRight} />
+          <div className={styles.imageSelectorDisplayButtonLowerLeft} />
+        </div>
       </div>
     );
   }

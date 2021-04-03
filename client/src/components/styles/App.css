@@ -39,9 +39,50 @@
   z-index: 5;
 }
 
-.svgTest {
-  position: relative;
-  z-index: 3;
-  width: 51;
-  height: 46;
+:root {
+  --image-selector-display-button-size: 14px;
+  --image-selector-display-button-margin: 3px;
+}
+
+.imageSelectorDisplayButtonV2 {
+  position: absolute;
+  right: 200px;
+  bottom: 40px;
+  z-index: 5;
+  /* border: 1px solid white; */
+  width: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
+  height: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
+}
+
+.imageSelectorDisplayButtonUpperLeft,
+.imageSelectorDisplayButtonUpperRight,
+.imageSelectorDisplayButtonLowerRight,
+.imageSelectorDisplayButtonLowerLeft {
+  background-color: rgb(255, 255, 255);
+  opacity: 0.4;
+  position: absolute;
+  display: inline-block;
+  border-radius: 4px;
+  width: var(--image-selector-display-button-size);
+  height: var(--image-selector-display-button-size);
+}
+
+.imageSelectorDisplayButtonUpperLeft {
+  top: 0px;
+  left: 0px;
+}
+
+.imageSelectorDisplayButtonUpperRight {
+  top: 0px;
+  left: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+}
+
+.imageSelectorDisplayButtonLowerRight {
+  top: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+  left: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+}
+
+.imageSelectorDisplayButtonLowerLeft {
+  top: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+  left: 0px;
 }
