@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles/ImageThumbnail.css';
 
-const ImageThumbnail = ({ imageData, onSetBackgroundImage }) => {
+export const ImageThumbnail = ({ imageData, onSetBackgroundImage }) => {
   const { thumb, full } = imageData.urls;
 
   return (
@@ -10,5 +10,3 @@ const ImageThumbnail = ({ imageData, onSetBackgroundImage }) => {
     </div>
   );
 };
-
-export default ImageThumbnail;

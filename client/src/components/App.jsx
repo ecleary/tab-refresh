@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import Background from './Background.jsx';
-import ImageSelector from './ImageSelector.jsx';
+import { ImageSelector } from './ImageSelector.jsx';
 import styles from './styles/App.css';
 
 export default class App extends Component {
