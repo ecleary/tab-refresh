@@ -13,12 +13,15 @@ export default class App extends Component {
       userId: '602c1f093a2e1c3c66e45f98',
       remainingUnsplashApiCalls: '',
       displayImageSelector: false,
+      selectorButtonHover: false,
     };
     this.getImageData = this.getImageData.bind(this);
     this.getUserBackgroundImage = this.getUserBackgroundImage.bind(this);
     this.setUserBackgroundImage = this.setUserBackgroundImage.bind(this);
     this.handleSetBackgroundImage = this.handleSetBackgroundImage.bind(this);
     this.toggleImageSelectorDisplay = this.toggleImageSelectorDisplay.bind(this);
+    this.handleSelectorButtonMouseEnter = this.handleSelectorButtonMouseEnter.bind(this);
+    this.handleSelectorButtonMouseLeave = this.handleSelectorButtonMouseLeave.bind(this);
   }
 
   componentDidMount() {
@@ -81,14 +84,28 @@ export default class App extends Component {
     });
   }
 
+  handleSelectorButtonMouseEnter() {
+    this.setState({
+      selectorButtonHover: true,
+    });
+  }
+
+  handleSelectorButtonMouseLeave() {
+    this.setState({
+      selectorButtonHover: false,
+    });
+  }
+
   render() {
     const {
       imageData,
       backgroundImageUrl,
       remainingUnsplashApiCalls,
       displayImageSelector,
+      selectorButtonHover,
     } = this.state;
     const remainingApiCallCountdown = `API calls left: ${remainingUnsplashApiCalls}`;
+    const selectorButtonHoverStyle = selectorButtonHover ? 'Hover' : '';
 
     return (
       <div>
@@ -109,12 +126,17 @@ export default class App extends Component {
         >
           <ImageSelector imageData={imageData} onSetBackgroundImage={this.handleSetBackgroundImage} />
         </div>
-        <button
+        <div
           className={styles.imageSelectorDisplayButton}
+          onMouseEnter={this.handleSelectorButtonMouseEnter}
+          onMouseLeave={this.handleSelectorButtonMouseLeave}
           onClick={this.toggleImageSelectorDisplay}
         >
-          Select image
-        </button>
+          <div className={styles.[`imageSelectorDisplayButtonUpperLeft${selectorButtonHoverStyle}`]} />
+          <div className={styles.[`imageSelectorDisplayButtonUpperRight${selectorButtonHoverStyle}`]} />
+          <div className={styles.[`imageSelectorDisplayButtonLowerRight${selectorButtonHoverStyle}`]} />
+          <div className={styles.[`imageSelectorDisplayButtonLowerLeft${selectorButtonHoverStyle}`]} />
+        </div>
       </div>
     );
   }

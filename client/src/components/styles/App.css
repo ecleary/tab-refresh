@@ -32,16 +32,73 @@
   display: none;
 }
 
+:root {
+  --image-selector-display-button-size: 14px;
+  --image-selector-display-button-margin: 3px;
+}
+
 .imageSelectorDisplayButton {
   position: absolute;
   bottom: 40px;
   right: 50px;
   z-index: 5;
+  width: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
+  height: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
+  cursor: pointer;
 }
 
-.svgTest {
-  position: relative;
-  z-index: 3;
-  width: 51;
-  height: 46;
+.imageSelectorDisplayButton:active {
+  transform: scale(0.95);
+  transition: all 0.2s;
+}
+
+.imageSelectorDisplayButtonUpperLeftHover,
+.imageSelectorDisplayButtonUpperRightHover,
+.imageSelectorDisplayButtonLowerRightHover,
+.imageSelectorDisplayButtonLowerLeftHover,
+.imageSelectorDisplayButtonUpperLeft,
+.imageSelectorDisplayButtonUpperRight,
+.imageSelectorDisplayButtonLowerRight,
+.imageSelectorDisplayButtonLowerLeft {
+  background-color: rgb(255, 255, 255);
+  opacity: 0.4;
+  position: absolute;
+  display: inline-block;
+  border-radius: 4px;
+  width: var(--image-selector-display-button-size);
+  height: var(--image-selector-display-button-size);
+}
+
+.imageSelectorDisplayButtonUpperLeftHover,
+.imageSelectorDisplayButtonUpperRightHover,
+.imageSelectorDisplayButtonLowerRightHover,
+.imageSelectorDisplayButtonLowerLeftHover {
+  opacity: 0.7;
+  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.5);
+  /* box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5); */
+}
+
+
+.imageSelectorDisplayButtonUpperLeftHover,
+.imageSelectorDisplayButtonUpperLeft {
+  top: 0px;
+  left: 0px;
+}
+
+.imageSelectorDisplayButtonUpperRightHover,
+.imageSelectorDisplayButtonUpperRight {
+  top: 0px;
+  left: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+}
+
+.imageSelectorDisplayButtonLowerRightHover,
+.imageSelectorDisplayButtonLowerRight {
+  top: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+  left: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+}
+
+.imageSelectorDisplayButtonLowerLeftHover,
+.imageSelectorDisplayButtonLowerLeft {
+  top: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+  left: 0px;
 }
