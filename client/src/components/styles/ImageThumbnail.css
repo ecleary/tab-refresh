@@ -1,4 +1,9 @@
 .thumbnailContainer {
   display: inline-block;
   user-select: none;
+  margin: 10px;
+}
+
+.imageThumbnail {
+  border-radius: 12px;
 }

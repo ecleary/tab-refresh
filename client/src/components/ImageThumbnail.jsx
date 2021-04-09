@@ -5,8 +5,11 @@ export const ImageThumbnail = ({ imageData, onSetBackgroundImage }) => {
   const { thumb, full } = imageData.urls;
 
   return (
-    <div className={styles.thumbnailContainer} onClick={(event) => onSetBackgroundImage(event, full)}>
-      <img src={thumb} />
+    <div
+      className={styles.thumbnailContainer}
+      onClick={(event) => onSetBackgroundImage(event, full)}
+    >
+      <img src={thumb} className={styles.imageThumbnail} />
     </div>
   );
 };
