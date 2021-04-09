@@ -52,8 +52,13 @@
   /* border: 1px solid white; */
   width: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
   height: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
+  cursor: pointer;
 }
 
+.imageSelectorDisplayButtonUpperLeftHover,
+.imageSelectorDisplayButtonUpperRightHover,
+.imageSelectorDisplayButtonLowerRightHover,
+.imageSelectorDisplayButtonLowerLeftHover,
 .imageSelectorDisplayButtonUpperLeft,
 .imageSelectorDisplayButtonUpperRight,
 .imageSelectorDisplayButtonLowerRight,
@@ -67,21 +72,33 @@
   height: var(--image-selector-display-button-size);
 }
 
+.imageSelectorDisplayButtonUpperLeftHover,
+.imageSelectorDisplayButtonUpperRightHover,
+.imageSelectorDisplayButtonLowerRightHover,
+.imageSelectorDisplayButtonLowerLeftHover {
+  opacity: 0.7;
+}
+
+
+.imageSelectorDisplayButtonUpperLeftHover,
 .imageSelectorDisplayButtonUpperLeft {
   top: 0px;
   left: 0px;
 }
 
+.imageSelectorDisplayButtonUpperRightHover,
 .imageSelectorDisplayButtonUpperRight {
   top: 0px;
   left: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
 }
 
+.imageSelectorDisplayButtonLowerRightHover,
 .imageSelectorDisplayButtonLowerRight {
   top: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
   left: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
 }
 
+.imageSelectorDisplayButtonLowerLeftHover,
 .imageSelectorDisplayButtonLowerLeft {
   top: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
   left: 0px;
