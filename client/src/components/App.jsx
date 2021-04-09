@@ -136,6 +136,7 @@ export default class App extends Component {
           className={styles.imageSelectorDisplayButtonV2}
           onMouseEnter={this.handleSelectorButtonMouseEnter}
           onMouseLeave={this.handleSelectorButtonMouseLeave}
+          onClick={this.toggleImageSelectorDisplay}
         >
           <div className={styles.[`imageSelectorDisplayButtonUpperLeft${selectorButtonHoverStyle}`]} />
           <div className={styles.[`imageSelectorDisplayButtonUpperRight${selectorButtonHoverStyle}`]} />
