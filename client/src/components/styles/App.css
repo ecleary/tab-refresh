@@ -32,32 +32,22 @@
   display: none;
 }
 
-.imageSelectorDisplayButton {
-  display: none;
-  position: absolute;
-  bottom: 40px;
-  right: 50px;
-  z-index: 5;
-}
-
 :root {
   --image-selector-display-button-size: 14px;
   --image-selector-display-button-margin: 3px;
 }
 
-.imageSelectorDisplayButtonV2 {
+.imageSelectorDisplayButton {
   position: absolute;
-  /* right: 200px; */
   bottom: 40px;
   right: 50px;
   z-index: 5;
-  /* border: 1px solid white; */
   width: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
   height: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
   cursor: pointer;
 }
 
-.imageSelectorDisplayButtonV2:active {
+.imageSelectorDisplayButton:active {
   transform: scale(0.95);
   transition: all 0.2s;
 }

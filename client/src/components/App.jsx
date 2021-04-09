@@ -126,14 +126,8 @@ export default class App extends Component {
         >
           <ImageSelector imageData={imageData} onSetBackgroundImage={this.handleSetBackgroundImage} />
         </div>
-        <button
-          className={styles.imageSelectorDisplayButton}
-          onClick={this.toggleImageSelectorDisplay}
-        >
-          Select image
-        </button>
         <div
-          className={styles.imageSelectorDisplayButtonV2}
+          className={styles.imageSelectorDisplayButton}
           onMouseEnter={this.handleSelectorButtonMouseEnter}
           onMouseLeave={this.handleSelectorButtonMouseLeave}
           onClick={this.toggleImageSelectorDisplay}
