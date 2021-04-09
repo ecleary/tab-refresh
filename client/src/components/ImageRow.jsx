@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageThumbnail } from './ImageThumbnail.jsx';
+import styles from './styles/ImageRow.css';
 
 export const ImageRow = ({ imageData, onSetBackgroundImage }) => {
   const imageThumbnails = [];
@@ -8,7 +9,7 @@ export const ImageRow = ({ imageData, onSetBackgroundImage }) => {
   });
 
   return (
-    <div>
+    <div className={styles.imageRowContainer}>
       {imageThumbnails}
     </div>
   );
