@@ -2,6 +2,7 @@
   display: inline-block;
   user-select: none;
   margin: 10px;
+  z-index: 8;
 }
 
 .imageThumbnail {
