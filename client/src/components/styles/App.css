@@ -6,12 +6,15 @@
   z-index: 5;
 }
 
+/* .imageSelectorContainerHidden, */
+.imageSelectorContainerFade,
 .imageSelectorContainer {
   position: absolute;
   bottom: 80px;
   right: 50px;
-  height: 500px;
-  overflow: scroll;
+  height: 520px;
+  /* overflow: scroll; */
+  transition: opacity 0.2s;
   z-index: 5;
 }
 
@@ -26,8 +29,17 @@
   z-index: 4;
 }
 
+.imageSelectorContainerFade {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.imageSelectorContainerHidden {
+  display: none;
+}
+
 .imageSelectorModalBackgroundHidden,
-.imageSelectorContainerHidden,
+/* .imageSelectorContainerHidden, */
 .imageSelectorContainer::-webkit-scrollbar {
   display: none;
 }
