@@ -1,9 +1,8 @@
 .imageSelectorContainer {
   position: relative;
   padding: 35px 15px 35px 25px;
-  height: 520px;
+  height: 520px; /* Image selector display height 2 of 3 */
   /* backdrop-filter: blur(2px); */
-  /* border: 1px solid white; */
   z-index: 5;
 }
 
@@ -21,7 +20,7 @@
 
 .thumbnailContainer {
   position: relative;
-  height: 450px;
+  height: 450px; /* Image selector display height 3 of 3 */
   overflow-y: scroll;
   padding-right: 5px;
   z-index: 7;

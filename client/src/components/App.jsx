@@ -138,9 +138,6 @@ export default class App extends Component {
           onClick={this.toggleImageSelectorDisplay}
         ></div>
         <div
-          // className={displayImageSelector
-          //   ? styles.imageSelectorContainer
-          //   : styles.imageSelectorContainerHidden}
           className={styles[`imageSelectorContainer${displayImageSelector}`]}
         >
           <ImageSelector imageData={imageData} onSetBackgroundImage={this.handleSetBackgroundImage} />
