@@ -1,4 +1,48 @@
 .imageSelectorContainer {
   position: relative;
+  padding: 35px 15px 35px 25px;
+  height: 520px; /* Image selector display height 2 of 3 */
+  /* backdrop-filter: blur(2px); */
   z-index: 5;
+}
+
+.imageSelectorBackground {
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+}
+
+.thumbnailContainer {
+  position: relative;
+  height: 450px; /* Image selector display height 3 of 3 */
+  overflow-y: scroll;
+  padding-right: 5px;
+  z-index: 7;
+}
+
+.thumbnailContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.thumbnailContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.thumbnailContainer::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.thumbnailContainer::-webkit-scrollbar-thumb:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.thumbnailContainer::-webkit-scrollbar-track {
+  display: none;
 }

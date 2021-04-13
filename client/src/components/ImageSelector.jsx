@@ -21,7 +21,10 @@ export const ImageSelector = ({ imageData, onSetBackgroundImage }) => {
 
   return (
     <div className={styles.imageSelectorContainer}>
-      {imageRows}
+      <div className={styles.imageSelectorBackground} />
+      <div className={styles.thumbnailContainer}>
+        {imageRows}
+      </div>
     </div>
   );
 };

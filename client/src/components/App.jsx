@@ -12,7 +12,7 @@ export default class App extends Component {
       backgroundImageUrl: '',
       userId: '602c1f093a2e1c3c66e45f98',
       remainingUnsplashApiCalls: '',
-      displayImageSelector: false,
+      displayImageSelector: 'Hidden',
       selectorButtonHover: false,
     };
     this.getImageData = this.getImageData.bind(this);
@@ -79,9 +79,27 @@ export default class App extends Component {
 
   toggleImageSelectorDisplay() {
     const { displayImageSelector } = this.state;
-    this.setState({
-      displayImageSelector: !displayImageSelector,
+    if (displayImageSelector === 'Hidden') {
+      this.setState({
+        displayImageSelector: 'Fade',
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          displayImageSelector: '',
+        });
+      }, 0);
     });
+  } else if (displayImageSelector === '') {
+      this.setState({
+        displayImageSelector: 'Fade',
+      }, () => {
+        setTimeout(() => {
+          this.setState({
+            displayImageSelector: 'Hidden',
+          });
+        }, 160);
+      });
+    }
   }
 
   handleSelectorButtonMouseEnter() {
@@ -114,15 +132,13 @@ export default class App extends Component {
         </h1>
         <Background backgroundImageUrl={backgroundImageUrl} />
         <div
-          className={displayImageSelector
+          className={displayImageSelector === ''
             ? styles.imageSelectorModalBackground
             : styles.imageSelectorModalBackgroundHidden}
           onClick={this.toggleImageSelectorDisplay}
         ></div>
         <div
-          className={displayImageSelector
-            ? styles.imageSelectorContainer
-            : styles.imageSelectorContainerHidden}
+          className={styles[`imageSelectorContainer${displayImageSelector}`]}
         >
           <ImageSelector imageData={imageData} onSetBackgroundImage={this.handleSetBackgroundImage} />
         </div>
