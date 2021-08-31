@@ -1,4 +1,4 @@
-const unsplash = require('./unsplash.js');
+const unsplash = require("./unsplash.js");
 
 module.exports.getImages = (req, res, next) => {
   unsplash.getImages((err, data) => {
