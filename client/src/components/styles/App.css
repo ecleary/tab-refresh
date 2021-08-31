@@ -11,7 +11,7 @@
   position: absolute;
   bottom: 80px;
   right: 50px;
-  height: 520px;
+  height: 520px; /* Image selector display height 1 of 3 */
   transition: opacity 0.15s;
   z-index: 5;
 }
@@ -51,8 +51,14 @@
   bottom: 40px;
   right: 50px;
   z-index: 5;
-  width: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
-  height: calc((var(--image-selector-display-button-size) * 2) + var(--image-selector-display-button-margin));
+  width: calc(
+    (var(--image-selector-display-button-size) * 2) +
+      var(--image-selector-display-button-margin)
+  );
+  height: calc(
+    (var(--image-selector-display-button-size) * 2) +
+      var(--image-selector-display-button-margin)
+  );
   cursor: pointer;
 }
 
@@ -87,7 +93,6 @@
   /* box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5); */
 }
 
-
 .imageSelectorDisplayButtonUpperLeftHover,
 .imageSelectorDisplayButtonUpperLeft {
   top: 0px;
@@ -97,17 +102,29 @@
 .imageSelectorDisplayButtonUpperRightHover,
 .imageSelectorDisplayButtonUpperRight {
   top: 0px;
-  left: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+  left: calc(
+    var(--image-selector-display-button-size) +
+      var(--image-selector-display-button-margin)
+  );
 }
 
 .imageSelectorDisplayButtonLowerRightHover,
 .imageSelectorDisplayButtonLowerRight {
-  top: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
-  left: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+  top: calc(
+    var(--image-selector-display-button-size) +
+      var(--image-selector-display-button-margin)
+  );
+  left: calc(
+    var(--image-selector-display-button-size) +
+      var(--image-selector-display-button-margin)
+  );
 }
 
 .imageSelectorDisplayButtonLowerLeftHover,
 .imageSelectorDisplayButtonLowerLeft {
-  top: calc(var(--image-selector-display-button-size) + var(--image-selector-display-button-margin));
+  top: calc(
+    var(--image-selector-display-button-size) +
+      var(--image-selector-display-button-margin)
+  );
   left: 0px;
 }
