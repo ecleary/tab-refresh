@@ -1,4 +1,4 @@
-const user = require('../models/user.js');
+const user = require("../models/user.js");
 
 module.exports.getBackgroundImageData = (req, res, next) => {
   const { userId } = req.params;
