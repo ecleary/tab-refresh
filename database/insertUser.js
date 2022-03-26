@@ -1,7 +1,7 @@
 const { User } = require('../server/models/user.js');
 
 const addUser = () => {
-  const newUser = new User({background: 'image'});
+  const newUser = new User({ background: 'image' });
   newUser.save((err, res) => {
     if (err) {
       console.error(err);
